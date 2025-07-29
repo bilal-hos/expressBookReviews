@@ -58,7 +58,6 @@ regd_users.post("/login", (req, res) => {
 regd_users.put("/auth/review/:isbn", (req, res) => {
   const isbn = req.params.isbn;
   const review = req.body.review;
-
   const username = req.session.authorization?.username;
 
   // Check if user is authenticated

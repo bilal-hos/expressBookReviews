@@ -4,8 +4,6 @@ const session = require("express-session");
 const customer_routes = require("./router/auth_users.js").authenticated;
 const genl_routes = require("./router/general.js").general;
 
-const asyncBooksRoutes = require("./router/asyncBooks.js").asyncBooksRouter;
-
 const app = express();
 
 app.use(express.json());
@@ -47,6 +45,5 @@ const PORT = 5000;
 
 app.use("/customer", customer_routes);
 app.use("/", genl_routes);
-app.use("/async", asyncBooksRoutes); // new async / promise routes
 
 app.listen(PORT, () => console.log("Server is running"));
